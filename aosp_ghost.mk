@@ -52,7 +52,11 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
-$(call inherit-product, device/motorola/ghost/full_ghost.mk)
+# Inherit some common CM stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+
+
+$(call inherit-product, device/motorola/ghost/aosp_ghost.mk)
 
 
 PRODUCT_RELEASE_NAME := MOTO X
